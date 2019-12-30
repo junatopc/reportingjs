@@ -8,7 +8,7 @@ import parser from './parser';
  * @param {string} [filename=data.csv] filename
  * @return {HTMLElement}
  */
-const createCSVExporterElement = (data, filename='data.csv') => {
+const createCSVExporterElement = (data, filename = 'data.csv') => {
   const content = parser.stringifyCSV(data);
   const hiddenElement = document.createElement('a');
   hiddenElement.setAttribute('href', `data:text/csv;charset=utf8,${encodeURI(content)}`);
@@ -22,8 +22,8 @@ const createCSVExporterElement = (data, filename='data.csv') => {
  * @param {string|ArrayBuffer} data
  * @param {string} [filename=data.csv] filename
  */
-const exportCSV = (data, filename='data.csv') => {
-  saveAs(new Blob([data], { type: 'data:text/csv;charset=utf8'}), filename);
+const exportCSV = (data, filename = 'data.csv') => {
+  saveAs(new Blob([data], { type: 'data:text/csv;charset=utf8' }), filename);
 };
 
 /**
@@ -32,7 +32,7 @@ const exportCSV = (data, filename='data.csv') => {
  * @param {string} [filename=data.json] filename
  * @return {HTMLElement}
  */
-const createJSONExporterElement = (data, filename='data.json') => {
+const createJSONExporterElement = (data, filename = 'data.json') => {
   const content = JSON.stringify(data);
   const hiddenElement = document.createElement('a');
   hiddenElement.setAttribute('href', `data:text/csv;charset=utf8${encodeURI(content)}`);
@@ -46,7 +46,7 @@ const createJSONExporterElement = (data, filename='data.json') => {
  * @param {string|ArrayBuffer} data
  * @param {string} filename
  */
-const exportJSON = (data, filename='data.jsosn') => {
+const exportJSON = (data, filename = 'data.jsosn') => {
   saveAs(new Blob([data], { type: 'data:text/json;charset=utf8' }), filename);
 };
 
